@@ -1,0 +1,149 @@
+<html>
+<body>
+<center>
+
+	
+<b>Consignment</b>
+<br/>
+How much is retail?<br/>
+$<input type = "text" id="retail"/><br/>
+	
+How much is resale?<br/>
+$<input type = "text" id="resale"/><br/>
+
+Profit: 
+<button onclick="Profit();">=</button><br/>
+$<input type="text" id="result"/>
+
+
+<br/><br/><b>StockX</b>
+<br/>How much is retail?<br/>
+$<input type = "text" id="retail2"/><br/>
+How much is resale?<br/>
+$<input type = "text" id="resale2"/><br/>
+
+Profit: 
+<button onclick="StockXProfit();">=</button><br/>
+$<input type="text" id="result2"/><br/>
+
+<br/>How much is retail?<br/>
+$<input type = "text" id="retail3"/><br/>
+How much profit do you want?<br/>
+$<input type = "text" id="profit3"/><br/>
+
+Sell for:
+<button onclick="Resale();">=</button><br/>
+$<input type="text" id="result3"/><br/>at Consignment<br/>
+
+<br/>How much is your Supreme item?<br/>
+$<input type = "text" id="item"/><br/>	
+Supreme Item Total 
+<button onclick="SupremeTotal();">=</button><br/>
+$<input type="text" id="result4"/><br/>
+
+<br/>How much is your Bape item?<br/>
+$<input type = "text" id="item2"/><br/>
+Bape Item Total 
+<button onclick="BapeTotal();">=</button><br/>
+$<input type="text" id="result5"/><br/>
+
+<br/><br/><br/>Quick Mafs<br/>
+<br/><input type = "text" id="multiply1"/>
+*
+<input type = "text" id="multiply2"/>
+<button onclick="Multiplication();">=</button>
+<input type="text" id="multiply"/>
+
+<br/><br/><input type = "text" id="sub1"/>
+-
+<input type = "text" id="sub2"/>
+<button onclick="Subtraction();">=</button>
+<input type="text" id="sub"/>
+
+<br/><br/><input type = "text" id="add1"/>
++
+<input type = "text" id="add2"/>
+<button onclick="Addition();">=</button>
+<input type="text" id="add"/>
+
+
+
+<script>
+function Profit()
+{
+var retail = parseFloat(document.getElementById("retail").value);
+
+var resale = parseFloat(document.getElementById("resale").value);
+
+document.getElementById("result").value = (((resale * 0.8) - retail).toFixed(2));
+}
+
+function StockXProfit()
+{
+var retail2 = parseFloat(document.getElementById("retail2").value);
+
+var resale2 = parseFloat(document.getElementById("resale2").value);
+
+document.getElementById("result2").value = (((resale2 * 0.88) - retail2).toFixed(2));
+			<!-- 0.875 = 12.5% fee, 0.88 = 12% fee -->
+}
+
+function Resale()
+{
+var retail3 = parseFloat(document.getElementById("retail3").value);
+
+var profit3 = parseFloat(document.getElementById("profit3").value);
+
+document.getElementById("result3").value = (((retail3 + profit3) / 0.8).toFixed(2));
+}
+
+function SupremeTotal()
+{
+var item = parseFloat(document.getElementById("item").value);
+
+	if (item < 110) {
+    	document.getElementById("result4").value = ((item + (10 * 1.08875)).toFixed(2));
+	}
+	else {
+	document.getElementById("result4").value = (((item + 10) * 1.08875).toFixed(2));
+	}
+}
+
+function BapeTotal()
+{
+var item2 = parseFloat(document.getElementById("item2").value);
+
+	if (item2 < 110) {
+    	document.getElementById("result5").value = ((item2 + 17.93).toFixed(2));
+	}
+	else {
+	document.getElementById("result5").value = (((item2 + 17.93) * 1.08875).toFixed(2));
+	}
+}
+
+
+function Addition()
+{
+var add1 = parseFloat(document.getElementById("add1").value);
+var add2 = parseFloat(document.getElementById("add2").value);
+document.getElementById("add").value = (add1 + add2);
+}
+
+function Subtraction()
+{
+var sub1 = parseFloat(document.getElementById("sub1").value);
+var sub2 = parseFloat(document.getElementById("sub2").value);
+document.getElementById("sub").value = (sub1 - sub2);
+}
+
+function Multiplication()
+{
+var multiply1 = parseFloat(document.getElementById("multiply1").value);
+var multiply2 = parseFloat(document.getElementById("multiply2").value);
+document.getElementById("multiply").value = (multiply1 * multiply2);
+}
+</script>
+
+</center>
+</body>
+</html>
